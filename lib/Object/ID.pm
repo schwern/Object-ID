@@ -7,6 +7,26 @@ use warnings;
 
 use version; our $VERSION = qv("v0.0.1");
 
+our @EXPORT = qw(object_id);
+
+sub import {
+    my $caller = caller;
+
+    no strict 'refs';
+    *{$caller.'::object_id'} = \&object_id;
+}
+
+require Hash::Util::FieldHash;
+Hash::Util::FieldHash::fieldhash(my %IDs);
+
+sub object_id {
+    # Use a string so we don't run out of numbers
+    state $last_id = "a";
+
+    my $self = shift;
+    return exists $IDs{$self} ? $IDs{$self} : ($IDs{$self} = ++$last_id);
+}
+
 
 =head1 NAME
 
