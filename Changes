@@ -1,3 +1,7 @@
+v0.0.2
+  * Added a README and explicit license
+
+
 v0.0.1  Sat May  1 09:01:51 PDT 2010
   New Features
   * Object::ID role to give objects a unique identifier
