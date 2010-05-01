@@ -1,6 +1,7 @@
 ---
 abstract: 'A unique identifier for any object'
-author: []
+author:
+  - 'Michael G Schwern <schwern@pobox.com>'
 build_requires:
   Test::More: 0.88
 configure_requires:

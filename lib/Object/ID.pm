@@ -159,6 +159,16 @@ This will print, for example, C<< Object's reference is
 Foo=HASH(0x803704) >> three times.
 
 
+=head1 LICENSE
+
+Copyright 2010, Michael G Schwern <schwern@pobox.com>.
+
+This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+
+See L<http://www.perl.com/perl/misc/Artistic.html>
+
+
 =head1 THANKS
 
 Thank you to Vincent Pit for coming up with the implementation.

@@ -8,6 +8,7 @@ use Module::Build;
 my $builder = Module::Build->new(
     module_name => 'Object::ID',
     license     => 'perl',
+    dist_author => 'Michael G Schwern <schwern@pobox.com>',
 
     meta_merge  => {
         resources => {
@@ -43,7 +44,10 @@ my $builder = Module::Build->new(
                 "Data::UUID" => 1.148
             }
         }
-    }
+    },
+
+    create_license      => 1,
+    create_readme       => 1,
 );
 
 $builder->create_build_script();
