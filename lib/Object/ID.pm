@@ -7,19 +7,22 @@ use warnings;
 
 use version; our $VERSION = qv("v0.0.1");
 
-our @EXPORT = qw(object_id);
+use Hash::Util::FieldHash;
+
+# Even though we're not using Exporter, be polite for introspection purposes
+our @EXPORT = qw(object_id object_uuid);
 
 sub import {
     my $caller = caller;
 
     no strict 'refs';
-    *{$caller.'::object_id'} = \&object_id;
+    *{$caller.'::object_id'}   = \&object_id;
+    *{$caller.'::object_uuid'} = \&object_uuid;
 }
 
 
 # All glory to Vincent Pit for coming up with this implementation
 {
-    use Hash::Util::FieldHash;
     Hash::Util::FieldHash::fieldhash(my %IDs);
 
     sub object_id {
@@ -27,6 +30,24 @@ sub import {
 
         state $last_id = "a";
         return exists $IDs{$self} ? $IDs{$self} : ($IDs{$self} = ++$last_id);
+    }
+}
+
+
+# All glory to Vincent Pit for coming up with this implementation
+{
+    Hash::Util::FieldHash::fieldhash(my %UUIDs);
+
+    sub object_uuid {
+        my $self = shift;
+
+        state $ug = eval { require Data::UUID; Data::UUID->new; };
+        if( !$ug ) {
+            require Carp;
+            Carp::croak("object_uuid() requires Data::UUID");
+        }
+
+        return exists $UUIDs{$self} ? $UUIDs{$self} : ($UUIDs{$self} = $ug->create_str);
     }
 }
 
@@ -100,6 +121,17 @@ For example:
 
     # This is false, even though they contain the same data.
     $obj->object_id eq $clone->object_id;
+
+=head2 object_uuid
+
+    my $uuid = $object->object_uuid
+
+Like C<< $object->object_id >> but returns a UUID unique to the $object.
+
+Only works if Data::UUID is installed.
+
+See L<Data::UUID> for more details about UUID.
+
 
 =head1 FAQ
 

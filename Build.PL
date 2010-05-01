@@ -29,6 +29,15 @@ my $builder = Module::Build->new(
     requires             => {
         perl            => '5.10.0',    # for Hash::Util::FieldHash
     },
+
+    auto_features => {
+        object_uuid     => {
+            description => "Unique object idenifier using UUIDs",
+            requires    => {
+                "Data::UUID" => 1.148
+            }
+        }
+    }
 );
 
 $builder->create_build_script();
