@@ -1,0 +1,13 @@
+.perlcriticrc
+.perltidyrc
+Build.PL
+Changes
+lib/Object/ID.pm
+lib/UNIVERSAL/Object/ID.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
+t/00compile.t
+t/destroy.t
+t/immutable.t
+t/role.t
+t/universal.t
