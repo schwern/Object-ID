@@ -5,6 +5,8 @@ use 5.10.0;
 use strict;
 use warnings;
 
+use version; our $VERSION = qv("v0.0.1");
+
 {
     package UNIVERSAL;
     use Object::ID;

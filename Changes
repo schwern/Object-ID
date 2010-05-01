@@ -1,1 +1,6 @@
-0.0.1
+v0.0.1  Sat May  1 09:01:51 PDT 2010
+  New Features
+  * Object::ID role to give objects a unique identifier
+  * $obj->object_id returns a unique object identifier for any object
+  * $obj->object_uuid does the same but returns a UUID (Data::UUID required)
+  * UNIVERSAL::Object::ID makes the methods available to all objects
