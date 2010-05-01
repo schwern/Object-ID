@@ -1,0 +1,33 @@
+---
+abstract: 'A unique identifier for any object'
+author: []
+build_requires:
+  Test::More: 0.88
+configure_requires:
+  Module::Build: 0.340201
+generated_by: 'Module::Build version 0.3607'
+keywords:
+  - id
+  - identifier
+  - universal
+  - object
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Object-ID
+provides:
+  Object::ID:
+    file: lib/Object/ID.pm
+    version: v0.0.1
+  UNIVERSAL:
+    file: lib/UNIVERSAL/Object/ID.pm
+  UNIVERSAL::Object::ID:
+    file: lib/UNIVERSAL/Object/ID.pm
+    version: v0.0.1
+requires:
+  perl: v5.10.0
+resources:
+  license: http://dev.perl.org/licenses/
+  repository: http://github.com/schwern/Object-ID
+version: v0.0.1
