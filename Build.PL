@@ -10,6 +10,12 @@ my $builder = Module::Build->new(
     license     => 'perl',
     dist_author => 'Michael G Schwern <schwern@pobox.com>',
 
+    no_index => {
+        package => [
+            "UNIVERSAL"
+        ],
+    },
+
     meta_merge  => {
         resources => {
             repository =>
@@ -21,12 +27,6 @@ my $builder = Module::Build->new(
         configure_requires => {
             'Module::Build'     => 0.340201     # what shipped with 5.10.1
         },
-
-        no_index => {
-            package => [
-                "UNIVERSAL"
-            ],
-        }
     },
 
     build_requires      => {

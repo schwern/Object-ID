@@ -1,5 +1,9 @@
-v0.0.2
+v0.0.2  Sat May  1 11:15:41 PDT 2010
+  New Features
   * Added a README and explicit license
+
+  Distribution Fixes
+  * Don't say we provide UNIVERSAL
 
 
 v0.0.1  Sat May  1 09:01:51 PDT 2010

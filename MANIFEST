@@ -4,14 +4,14 @@ Build.PL
 Changes
 lib/Object/ID.pm
 lib/UNIVERSAL/Object/ID.pm
+LICENSE
 MANIFEST			This list of files
 MANIFEST.SKIP
+META.yml
+README
 t/00compile.t
 t/destroy.t
 t/immutable.t
 t/role.t
 t/universal.t
 t/uuid.t
-META.yml
-README
-LICENSE
