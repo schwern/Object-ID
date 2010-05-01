@@ -18,15 +18,16 @@ sub import {
 
 
 # All glory to Vincent Pit for coming up with this implementation
-require Hash::Util::FieldHash;
-Hash::Util::FieldHash::fieldhash(my %IDs);
+{
+    use Hash::Util::FieldHash;
+    Hash::Util::FieldHash::fieldhash(my %IDs);
 
-sub object_id {
-    # Use a string so we don't run out of numbers
-    state $last_id = "a";
+    sub object_id {
+        my $self = shift;
 
-    my $self = shift;
-    return exists $IDs{$self} ? $IDs{$self} : ($IDs{$self} = ++$last_id);
+        state $last_id = "a";
+        return exists $IDs{$self} ? $IDs{$self} : ($IDs{$self} = ++$last_id);
+    }
 }
 
 
