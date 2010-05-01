@@ -20,6 +20,12 @@ my $builder = Module::Build->new(
         configure_requires => {
             'Module::Build'     => 0.340201     # what shipped with 5.10.1
         },
+
+        no_index => {
+            package => [
+                "UNIVERSAL"
+            ],
+        }
     },
 
     build_requires      => {

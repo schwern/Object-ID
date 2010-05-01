@@ -16,6 +16,9 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Object-ID
+no_index:
+  package:
+    - UNIVERSAL
 provides:
   Object::ID:
     file: lib/Object/ID.pm
