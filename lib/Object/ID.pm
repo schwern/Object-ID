@@ -16,6 +16,8 @@ sub import {
     *{$caller.'::object_id'} = \&object_id;
 }
 
+
+# All glory to Vincent Pit for coming up with this implementation
 require Hash::Util::FieldHash;
 Hash::Util::FieldHash::fieldhash(my %IDs);
 
@@ -94,6 +96,35 @@ For example:
     # This is false, even though they contain the same data.
     $obj->object_id eq $clone->object_id;
 
+=head1 FAQ
+
+=head2 Why not just use the object's reference?
+
+References are not unique over the life of a process.  Perl will reuse
+references of destroyed objects, as demonstrated by this code snippet:
+
+    {
+        package Foo;
+
+        sub new {
+            my $class = shift;
+            my $string = shift;
+            return bless {}, $class;
+        }
+    }
+
+    for(1..3) {
+        my $obj = Foo->new;
+        print "Object's reference is $obj\n";
+    }
+
+This will print, for example, C<< Object's reference is
+Foo=HASH(0x803704) >> three times.
+
+
+=head1 THANKS
+
+Thank you to Vincent Pit for coming up with the implementation.
 
 =cut
 
