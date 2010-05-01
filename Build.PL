@@ -16,6 +16,10 @@ my $builder = Module::Build->new(
         ],
     },
 
+    meta_add => {
+        provides => {}
+    },
+
     meta_merge  => {
         resources => {
             repository =>

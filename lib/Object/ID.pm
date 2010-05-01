@@ -5,7 +5,7 @@ use 5.10.0;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv("v0.0.2");
+use version; our $VERSION = qv("v0.0.3");
 
 use Hash::Util::FieldHash;
 
