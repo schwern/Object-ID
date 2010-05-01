@@ -42,6 +42,7 @@ Object::ID - A unique identifier for any object
     # Imports the object_id method
     use Object::ID;
 
+
 =head1 DESCRIPTION
 
 This is a unique identifier for any object, regardless of its type,
@@ -62,6 +63,8 @@ C<< use Object::ID >> in your class.
     package My::Class;
 
     use Object::ID;
+
+Then write your class however you want.
 
 
 =head1 METHODS
