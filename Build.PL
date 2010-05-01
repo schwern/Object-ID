@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-use 5.10.0;  # Need Hash::Util::FieldHash
+use 5.10.0;
 
 use strict;
 use Module::Build;
@@ -18,15 +18,16 @@ my $builder = Module::Build->new(
         keywords => [ 'id', 'identifier', 'universal', 'object' ],
 
         configure_requires => {
-            'Module::Build'     => 0.2808
+            'Module::Build'     => 0.340201     # what shipped with 5.10.1
         },
     },
 
     build_requires      => {
-        'Test::More'        => 0.72,
+        'Test::More'        => 0.88,    # for done_testing
     },
 
     requires             => {
+        perl            => '5.10.0',    # for Hash::Util::FieldHash
     },
 );
 
