@@ -3,9 +3,11 @@
 use 5.10.0;
 
 use strict;
-use Module::Build;
+use lib 'inc';
 
-my $builder = Module::Build->new(
+use MyBuilder;
+
+my $builder = MyBuilder->new(
     module_name => 'Object::ID',
     license     => 'perl',
     dist_author => 'Michael G Schwern <schwern@pobox.com>',
@@ -14,10 +16,6 @@ my $builder = Module::Build->new(
         package => [
             "UNIVERSAL"
         ],
-    },
-
-    meta_add => {
-        provides => {}
     },
 
     meta_merge  => {

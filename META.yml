@@ -20,10 +20,16 @@ name: Object-ID
 no_index:
   package:
     - UNIVERSAL
-provides: {}
+provides:
+  Object::ID:
+    file: lib/Object/ID.pm
+    version: v0.0.4
+  UNIVERSAL::Object::ID:
+    file: lib/UNIVERSAL/Object/ID.pm
+    version: v0.0.4
 requires:
   perl: v5.10.0
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/schwern/Object-ID
-version: v0.0.3
+version: v0.0.4

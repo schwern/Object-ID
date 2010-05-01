@@ -2,6 +2,7 @@
 .perltidyrc
 Build.PL
 Changes
+inc/MyBuilder.pm
 lib/Object/ID.pm
 lib/UNIVERSAL/Object/ID.pm
 LICENSE

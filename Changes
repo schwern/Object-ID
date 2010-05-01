@@ -1,3 +1,8 @@
+v0.0.4  Sat May  1 13:53:39 PDT 2010
+  Distribution fixes
+  * I said I don't provide UNIVERSAL!
+
+
 v0.0.3  Sat May  1 13:24:24 PDT 2010
   Distribution fixes
   * Trying again to convince PAUSE we don't provide UNIVERSAL
