@@ -49,6 +49,7 @@ This is a unique identifier for any object, regardless of its type,
 structure or contents.  Its features are:
 
     * Works on ANY object of any type
+    * Does not modify the object in any way
     * Does not change with the object's contents
     * Is O(1) to calculate (ie. doesn't matter how big the object is)
     * The id is unique for the life of the process
