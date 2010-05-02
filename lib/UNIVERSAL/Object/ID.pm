@@ -32,11 +32,13 @@ available to every object.
 
 Use at your own risk, polluting UNIVERSAL is not to be taken likely.
 The best place to use this module is in your own personal or internal
-use code rather than a widely distributed software library.
+use code rather than a widely distributed software library.  Or you
+can use L<Method::Lexical> to safely apply the UNIVERSAL effect to
+just your lexical scope.
 
 =head1 SEE ALSO
 
-L<Object::ID>
+L<Object::ID>, L<Method::Lexical>
 
 =cut
 
