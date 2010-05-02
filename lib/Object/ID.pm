@@ -8,6 +8,7 @@ use warnings;
 use version; our $VERSION = qv("v0.0.4");
 
 use Hash::Util::FieldHash;
+use Sub::Name qw(subname);
 
 # Even though we're not using Exporter, be polite for introspection purposes
 our @EXPORT = qw(object_id object_uuid);
@@ -15,9 +16,15 @@ our @EXPORT = qw(object_id object_uuid);
 sub import {
     my $caller = caller;
 
-    no strict 'refs';
-    *{$caller.'::object_id'}   = \&object_id;
-    *{$caller.'::object_uuid'} = \&object_uuid;
+    for my $method (qw<object_id object_uuid>) {
+        my $name = "$caller\::$method";
+        no strict 'refs';
+        # In a client class using namespace::autoclean, the exported methods
+        # are indistinguishable from exported functions, and therefore get
+        # autocleaned out of existence.  So use subname() to rename them as
+        # things that namespace::autoclean will interpret as methods.
+        *$name = subname($name, \&$method);
+    }
 }
 
 
