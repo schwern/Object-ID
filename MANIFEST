@@ -11,8 +11,10 @@ MANIFEST.SKIP
 META.yml
 README
 t/00compile.t
+t/autoclean.t
 t/destroy.t
 t/immutable.t
+t/lib/AutoCleanWidget.pm
 t/role.t
 t/universal.t
 t/uuid.t

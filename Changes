@@ -1,3 +1,8 @@
+v0.0.5  Sun May  2 10:26:55 PDT 2010
+  Bug Fixes
+  * Work with classes that use namespace::autoclean
+
+
 v0.0.4  Sat May  1 13:53:39 PDT 2010
   Distribution fixes
   * I said I don't provide UNIVERSAL!

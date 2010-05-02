@@ -23,13 +23,14 @@ no_index:
 provides:
   Object::ID:
     file: lib/Object/ID.pm
-    version: v0.0.4
+    version: v0.0.5
   UNIVERSAL::Object::ID:
     file: lib/UNIVERSAL/Object/ID.pm
-    version: v0.0.4
+    version: v0.0.5
 requires:
+  Sub::Name: 0.03
   perl: v5.10.0
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/schwern/Object-ID
-version: v0.0.4
+version: v0.0.5
