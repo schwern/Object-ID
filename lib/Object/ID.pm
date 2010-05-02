@@ -36,12 +36,14 @@ sub import {
         my $self = shift;
 
         state $last_id = "a";
-        return exists $IDs{$self} ? $IDs{$self} : ($IDs{$self} = ++$last_id);
+
+        # This is 15% faster than ||=
+        return $IDs{$self} if exists $IDs{$self};
+        return $IDs{$self} = ++$last_id;
     }
 }
 
 
-# All glory to Vincent Pit for coming up with this implementation
 {
     Hash::Util::FieldHash::fieldhash(my %UUIDs);
 
@@ -54,7 +56,8 @@ sub import {
             Carp::croak("object_uuid() requires Data::UUID");
         }
 
-        return exists $UUIDs{$self} ? $UUIDs{$self} : ($UUIDs{$self} = $ug->create_str);
+        return $UUIDs{$self} if exists $UUIDs{$self};
+        return $UUIDs{$self} = $ug->create_str;
     }
 }
 
