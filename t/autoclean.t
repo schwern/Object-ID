@@ -9,9 +9,9 @@ use Test::More;
 plan skip_all => 'namespace::autoclean not available'
     unless eval { require namespace::autoclean; 1 };
 
-require Widget;
+require AutoCleanWidget;
 
-my $widget = new_ok('Widget');
+my $widget = new_ok('AutoCleanWidget');
 can_ok($widget, qw<object_id object_uuid>);
 
 done_testing;
