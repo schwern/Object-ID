@@ -37,7 +37,7 @@ my $builder = MyBuilder->new(
 
     requires             => {
         perl            => '5.10.0',    # for Hash::Util::FieldHash
-        "Sub::Name"     => 0,
+        "Sub::Name"     => '0.03',
     },
 
     auto_features => {
