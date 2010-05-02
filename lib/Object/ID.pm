@@ -81,6 +81,7 @@ structure or contents.  Its features are:
     * Does not change with the object's contents
     * Is O(1) to calculate (ie. doesn't matter how big the object is)
     * The id is unique for the life of the process
+    * The id is always a true value
 
 
 =head1 USAGE
@@ -164,6 +165,16 @@ references of destroyed objects, as demonstrated by this code snippet:
 
 This will print, for example, C<< Object's reference is
 Foo=HASH(0x803704) >> three times.
+
+
+=head2 How much memory does it use?
+
+Very little.
+
+Object::ID stores the ID and address of each object you've asked the
+ID of.  Once the object has been destroyed it no longer stores it.  In
+other words, you only pay for what you use.  When you're done with it,
+you don't pay for it any more.
 
 
 =head1 LICENSE
