@@ -1,6 +1,6 @@
 package Object::ID;
 
-use 5.10.0;
+use 5.8.8;
 
 use strict;
 use warnings;
@@ -33,27 +33,26 @@ sub import {
 {
     fieldhashes \my(%IDs, %UUIDs);
 
+    my $Last_ID = "a";
     sub object_id {
         my $self = shift;
 
-        state $last_id = "a";
-
         # This is 15% faster than ||=
         return $IDs{$self} if exists $IDs{$self};
-        return $IDs{$self} = ++$last_id;
+        return $IDs{$self} = ++$Last_ID;
     }
 
+    my $UG = eval { require Data::UUID; Data::UUID->new; };
     sub object_uuid {
         my $self = shift;
 
-        state $ug = eval { require Data::UUID; Data::UUID->new; };
-        if( !$ug ) {
+        if( !$UG ) {
             require Carp;
             Carp::croak("object_uuid() requires Data::UUID");
         }
 
         return $UUIDs{$self} if exists $UUIDs{$self};
-        return $UUIDs{$self} = $ug->create_str;
+        return $UUIDs{$self} = $UG->create_str;
     }
 }
 

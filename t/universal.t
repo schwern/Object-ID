@@ -24,14 +24,14 @@ use UNIVERSAL::Object::ID;
 
 # What about a totally unrelated module?
 {
-    use Time::Piece;
-    my $time = gmtime;
-    ok $time->object_id;
+    use DirHandle;
+    my $dh = DirHandle->new(".");
+    ok $dh->object_id;
 
-    my $time2 = gmtime;
-    ok $time2->object_id;
+    my $dh2 = DirHandle->new(".");
+    ok $dh2->object_id;
 
-    isnt $time->object_id, $time2->object_id;
+    isnt $dh->object_id, $dh2->object_id;
 }
 
 # A regex object?

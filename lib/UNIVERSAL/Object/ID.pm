@@ -1,6 +1,6 @@
 package UNIVERSAL::Object::ID;
 
-use 5.10.0;
+use 5.8.8;
 
 use strict;
 use warnings;
