@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-use 5.10.0;
+use 5.8.5;
 
 use strict;
 use lib 'inc';
@@ -36,8 +36,9 @@ my $builder = MyBuilder->new(
     },
 
     requires             => {
-        perl            => '5.10.0',    # for Hash::Util::FieldHash
-        "Sub::Name"     => '0.03',
+        perl                    => '5.8.5',  # Hash::FieldHash's lower limit
+        "Sub::Name"             => '0.03',
+        'Hash::FieldHash'       => '0.06',
     },
 
     auto_features => {

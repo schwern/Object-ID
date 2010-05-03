@@ -7,7 +7,8 @@ use warnings;
 
 use version; our $VERSION = qv("v0.0.5");
 
-use Hash::Util::FieldHash;
+# Over 2x faster than Hash::Util::FieldHash
+use Hash::FieldHash qw(fieldhashes);
 use Sub::Name qw(subname);
 
 # Even though we're not using Exporter, be polite for introspection purposes
@@ -30,7 +31,7 @@ sub import {
 
 # All glory to Vincent Pit for coming up with this implementation
 {
-    Hash::Util::FieldHash::fieldhash(my %IDs);
+    fieldhashes \my(%IDs, %UUIDs);
 
     sub object_id {
         my $self = shift;
@@ -41,11 +42,6 @@ sub import {
         return $IDs{$self} if exists $IDs{$self};
         return $IDs{$self} = ++$last_id;
     }
-}
-
-
-{
-    Hash::Util::FieldHash::fieldhash(my %UUIDs);
 
     sub object_uuid {
         my $self = shift;

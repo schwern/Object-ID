@@ -1,3 +1,12 @@
+v0.1.0
+  New Features
+  * Now works back to 5.8.5
+
+  Performance
+  * 2x performance boost on the first call to object_id() for each object
+    thanks to Hash::FieldHash.
+
+
 v0.0.5  Sun May  2 10:26:55 PDT 2010
   Bug Fixes
   * Work with classes that use namespace::autoclean
