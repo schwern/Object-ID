@@ -42,17 +42,26 @@ sub import {
         return $IDs{$self} = ++$Last_ID;
     }
 
-    my $UG = eval { require Data::UUID; Data::UUID->new; };
-    sub object_uuid {
-        my $self = shift;
+    if ( eval { require Data::UUID } ) {
+        my $UG;
 
-        if( !$UG ) {
+        *object_uuid = sub {
+            my $self = shift;
+
+            # Because the mere presense of a Data::UUID object will
+            # cause problems with threads, don't initialize it until
+            # absolutely necessary.
+            $UG ||= Data::UUID->new;
+
+            return $UUIDs{$self} if exists $UUIDs{$self};
+            return $UUIDs{$self} = $UG->create_str;
+        }
+    }
+    else {
+        *object_uuid = sub {
             require Carp;
             Carp::croak("object_uuid() requires Data::UUID");
-        }
-
-        return $UUIDs{$self} if exists $UUIDs{$self};
-        return $UUIDs{$self} = $UG->create_str;
+        };
     }
 }
 
