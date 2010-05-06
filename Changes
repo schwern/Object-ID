@@ -1,10 +1,14 @@
-v0.1.0
+v0.1.0  Wed May  5 18:06:31 PDT 2010
   New Features
   * Now works back to 5.8.5
 
   Performance
   * 2x performance boost on the first call to object_id() for each object
     thanks to Hash::FieldHash.
+
+  Bug Fixes
+  * object_id() will work with threads, but object_uuid() will not.
+    Will fix itself when Data::UUID fixes threads.
 
 
 v0.0.5  Sun May  2 10:26:55 PDT 2010
