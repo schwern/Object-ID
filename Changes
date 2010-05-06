@@ -1,6 +1,6 @@
 v0.1.0  Wed May  5 18:06:31 PDT 2010
   New Features
-  * Now works back to 5.8.5
+  * Now works back to 5.8.8
 
   Performance
   * 2x performance boost on the first call to object_id() for each object
