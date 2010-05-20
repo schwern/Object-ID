@@ -1,3 +1,9 @@
+v0.1.1
+  Distribution Changes
+  * Lowered the requirement on version.pm to 0.77 (what came with 5.10.1) at the
+    request of Debian to make packaging easier. [rt.cpan.org 57650]
+
+
 v0.1.0  Wed May  5 18:06:31 PDT 2010
   New Features
   * Now works back to 5.8.8

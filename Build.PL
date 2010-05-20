@@ -27,13 +27,13 @@ my $builder = MyBuilder->new(
         keywords => [ 'id', 'identifier', 'universal', 'object' ],
 
         configure_requires => {
-            'Module::Build'     => 0.340201     # what shipped with 5.10.1
+            'Module::Build'     => '0.340201'     # what shipped with 5.10.1
         },
     },
 
     build_requires      => {
-        'Test::More'        => 0.88,    # for done_testing
-        version             => '0.80',
+        'Test::More'        => '0.88',    # for done_testing
+        version             => '0.77',
     },
 
     requires             => {
