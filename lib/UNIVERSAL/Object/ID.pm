@@ -5,7 +5,7 @@ use 5.8.8;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv("v0.1.0");
+use version; our $VERSION = qv("v0.1.1");
 
 {
     package UNIVERSAL;

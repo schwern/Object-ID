@@ -1,4 +1,4 @@
-v0.1.1
+v0.1.1  Thu May 20 14:17:23 PDT 2010
   Distribution Changes
   * Lowered the requirement on version.pm to 0.77 (what came with 5.10.1) at the
     request of Debian to make packaging easier. [rt.cpan.org 57650]

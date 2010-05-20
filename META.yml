@@ -4,7 +4,7 @@ author:
   - 'Michael G Schwern <schwern@pobox.com>'
 build_requires:
   Test::More: 0.88
-  version: 0.80
+  version: 0.77
 configure_requires:
   Module::Build: 0.340201
 generated_by: 'Module::Build version 0.3607'
@@ -24,10 +24,10 @@ no_index:
 provides:
   Object::ID:
     file: lib/Object/ID.pm
-    version: v0.1.0
+    version: v0.1.1
   UNIVERSAL::Object::ID:
     file: lib/UNIVERSAL/Object/ID.pm
-    version: v0.1.0
+    version: v0.1.1
 requires:
   Hash::FieldHash: 0.10
   Sub::Name: 0.03
@@ -35,4 +35,4 @@ requires:
 resources:
   license: http://dev.perl.org/licenses/
   repository: http://github.com/schwern/Object-ID
-version: v0.1.0
+version: v0.1.1
