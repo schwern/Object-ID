@@ -1,4 +1,4 @@
-v0.1.2  Sat Sep 24 21:46:17 PDT 2011
+v0.1.2  Sat Sep 24 21:49:25 PDT 2011
   Bug Fixes
   * Quiet overzealous "v-string in use/require non-portable" warning from
     Perl 5.10.0.
