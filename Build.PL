@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-use 5.8.8;
+use 5.008_008;
 
 use strict;
 use lib 'inc';

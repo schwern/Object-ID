@@ -1,3 +1,9 @@
+v0.1.2  Sat Sep 24 21:46:17 PDT 2011
+  Bug Fixes
+  * Quiet overzealous "v-string in use/require non-portable" warning from
+    Perl 5.10.0.
+
+
 v0.1.1  Thu May 20 14:17:23 PDT 2010
   Distribution Changes
   * Lowered the requirement on version.pm to 0.77 (what came with 5.10.1) at the
