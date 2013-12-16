@@ -48,7 +48,7 @@ sub import {
         *object_uuid = sub {
             my $self = shift;
 
-            # Because the mere presense of a Data::UUID object will
+            # Because the mere presence of a Data::UUID object will
             # cause problems with threads, don't initialize it until
             # absolutely necessary.
             $UG ||= Data::UUID->new;
